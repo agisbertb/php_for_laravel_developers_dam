@@ -13,3 +13,4 @@ Creat per Sergi Tur Badenas
 - v0.1: Exemple Hello World de PHP i HTML sense separation of cencerns -> Sense MVC
 - v0.2: Exemple MVC amb Hello World
 - v0.3: Versió del codi al final del primer video
+- v0.4: Separar la configuració (config.php) del codi -> implementat la 0 de SOLID -> Open To Extension closed to modification
