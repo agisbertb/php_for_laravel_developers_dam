@@ -4,24 +4,25 @@ require 'app/helpers.php';
 
 require 'app/Task.php';
 
-//$task = new Task(1,'comprar pa','a la panaderia','0');
-//var_dump($task);
+require 'config.php';
 
-$user = 'debian-sys-maint';
-$pass = '5ixSMGO5pVdzS2lt';
+//$user = 'debian-sys-maint';
+//$pass = '5ixSMGO5pVdzS2lt';
+//$dsn = 'mysql:host=localhost;dbname=phplaraveldevs';
 
-//try {
-//    $dbh = new PDO('mysql:host=localhost;dbname=phplaraveldevs', $user, $pass);
-//} catch (\Exception $e) {
-//    echo 'Error de connexió a la base de dades';
-//}
-//
-//$statement = $dbh->prepare('SELECT * FROM tasks;');
+try {
+    $dbh = new PDO(
+        $config['database']['databasetype'] . ':host=' . $config['database']['host'] . ';dbname=' . $config['database']['name'],
+        $config['database']['user'],
+        $config['database']['password']);
+} catch (\Exception $e) {
+    echo 'Error de connexió a la base de dades';
+}
 
-//$statement->execute();
+$statement = $dbh->prepare('SELECT * FROM tasks;');
 
-//$tasks = $statement->fetchAll(PDO::FETCH_CLASS,'Task');
+$statement->execute();
 
-var_dump($tasks);
+$tasks = $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
 
 $greeting = greet();
