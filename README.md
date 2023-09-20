@@ -11,3 +11,4 @@ Creat per Sergi Tur Badenas
 # Tags
 
 - v0.1: Exemple Hello World de PHP i HTML sense separation of cencerns -> Sense MVC
+- v0.2: Exemple MVC amb Hello World
