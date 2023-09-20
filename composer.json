@@ -1,0 +1,11 @@
+{
+    "name": "agisbert/php_for_laravel_developers_dam",
+    "description": "Bla bla bla",
+    "type": "project",
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    },
+    "require": {}
+}
