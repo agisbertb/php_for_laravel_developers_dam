@@ -14,3 +14,5 @@ Creat per Sergi Tur Badenas
 - v0.2: Exemple MVC amb Hello World
 - v0.3: Versió del codi al final del primer video
 - v0.4: Separar la configuració (config.php) del codi -> implementat la 0 de SOLID -> Open To Extension closed to modification
+- v0.5: Refactorització POO, afegit composer.json i autoload. Namespaces
+- v0.6: Container -> Implementar D de SOLID Dependency Inversion Principale -> Inverter -> Inversor Container -> APP
