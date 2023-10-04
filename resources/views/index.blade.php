@@ -1,50 +1,52 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        header {
-            background: cornflowerblue;
-            padding: 2em;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-<nav>
-    <ul>
-        <li><a href="/tasks">Tasques</a></li>
-        <li><a href="/users">Users</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/index">Home</a></li>
-    </ul>
-</nav>
-<header>
-    <h1><?=$greeting;?></h1>
+<?php require '../resources/views/layout/html_header.blade.php'; ?>
+<?php require '../resources/views/layout/nav.blade.php'; ?>
 
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Completed</th>
-        </tr>
-        <?php foreach ($tasks as $task): ?>
-            <tr>
-                <td><?=$task->id;?></td>
-                <td><?=$task->title;?></td>
-                <td><?=$task->description;?></td>
-                <td><?=$task->completed;?></td>
-            </tr>
-        <?php endforeach; ?>
+<div class="bg-gray-800 pb-32">
+
+    <header class="py-10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold tracking-tight text-white">TASQUES</h1>
+        </div>
+    </header>
+</div>
+
+<main class="-mt-32">
+    <div class="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div class="rounded-lg bg-white px-5 py-6 shadow sm:px-6">
 
 
-    </table>
-</header>
-</body>
-</html>
+            <div class="px-4 sm:px-6 lg:px-8">
+                <div class="mt-8 flow-root">
+                    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                            <table class="min-w-full divide-y divide-gray-300">
+                                <thead>
+                                <tr>
+                                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">Id</th>
+                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Títol</th>
+                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Descripció</th>
+                                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Completat</th>
+                                </tr>
+                                </thead>
+                                <tbody class="bg-white">
+                                <?php foreach ($tasks as $task): ?>
+                                <tr class="even:bg-gray-50">
+                                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3"><?=$task->id;?></td>
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?=$task->title;?></td>
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?=$task->description;?></td>
+                                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><?=$task->completed;?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                                <!-- More people... -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<?php require '../resources/views/layout/footer.blade.php'; ?>
